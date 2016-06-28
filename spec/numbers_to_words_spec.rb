@@ -29,4 +29,16 @@ describe('Fixnum#numbers_to_words') do
   it('returns a word for the millions place') do
     expect(1230000.numbers_to_words()).to(eq("one million two hundred thirty thousand "))
   end
+  it('returns a word for the ten millions place') do
+    expect(43300000.numbers_to_words()).to(eq("forty three million three hundred thousand "))
+  end
+  it('returns a word for the hundred millions place') do
+    expect(193500000.numbers_to_words()).to(eq("one hundred ninety three million five hundred thousand "))
+  end
+  it('returns a word for the hundred billions place') do
+    expect(120193500000.numbers_to_words()).to(eq("one hundred twenty billion one hundred ninety three million five hundred thousand "))
+  end
+  it('returns a word for the hundred trillions place') do
+    expect(120193500000000.numbers_to_words()).to(eq("one hundred twenty trillion one hundred ninety three billion five hundred million "))
+  end
 end
